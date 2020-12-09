@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
 
-    <script type="module" src="/build/shopify-checkout-fields.esm.js"></script>
-    <script nomodule src="/build/shopify-checkout-fields.js"></script>
-  </head>
-  <body>
-    <shopify-checkout-fields section-title="Extra Fields"><span>hi</span></shopify-checkout-fields>
-    <form>
-      <div class="step__footer"></div>
-    </form>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/shopify-checkout-fields.esm.js"></script>
+  <script nomodule src="/build/shopify-checkout-fields.js"></script>
+</head>
+
+<body>
+  <shopify-checkout-fields section-title="Extra Fields">
+    <shopify-checkout-field name="wut" label="Wut" />
+    <shopify-checkout-field name="thing" label="Thing" type="checkbox" />
+  </shopify-checkout-fields>
+  <form>
+    <div class="step__footer"></div>
+  </form>
+</body>
+
 </html>

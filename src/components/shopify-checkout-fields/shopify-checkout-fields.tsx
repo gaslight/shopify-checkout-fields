@@ -4,7 +4,7 @@ import { Component, Host, h, Element, Prop } from '@stencil/core';
   tag: 'shopify-checkout-fields',
   shadow: false,
 })
-export class LivateCheckoutFields {
+export class ShopifyCheckoutFields {
 
   @Element() el: HTMLElement;
 

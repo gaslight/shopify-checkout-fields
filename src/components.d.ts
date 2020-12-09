@@ -20,6 +20,22 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface ShopifyCheckoutField {
+        /**
+          * The label and placeholder for this field
+         */
+        "label": string;
+        /**
+          * The name of the checkout attribute to populate
+         */
+        "name": string;
+        "size": number;
+        /**
+          * The type of the input field
+         */
+        "type": string;
+        "value": string;
+    }
     interface ShopifyCheckoutFields {
         /**
           * The header title for the section containing these fields. Will appear after built in Shopify fields.
@@ -34,6 +50,12 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLShopifyCheckoutFieldElement extends Components.ShopifyCheckoutField, HTMLStencilElement {
+    }
+    var HTMLShopifyCheckoutFieldElement: {
+        prototype: HTMLShopifyCheckoutFieldElement;
+        new (): HTMLShopifyCheckoutFieldElement;
+    };
     interface HTMLShopifyCheckoutFieldsElement extends Components.ShopifyCheckoutFields, HTMLStencilElement {
     }
     var HTMLShopifyCheckoutFieldsElement: {
@@ -42,6 +64,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "shopify-checkout-field": HTMLShopifyCheckoutFieldElement;
         "shopify-checkout-fields": HTMLShopifyCheckoutFieldsElement;
     }
 }
@@ -60,6 +83,22 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface ShopifyCheckoutField {
+        /**
+          * The label and placeholder for this field
+         */
+        "label"?: string;
+        /**
+          * The name of the checkout attribute to populate
+         */
+        "name"?: string;
+        "size"?: number;
+        /**
+          * The type of the input field
+         */
+        "type"?: string;
+        "value"?: string;
+    }
     interface ShopifyCheckoutFields {
         /**
           * The header title for the section containing these fields. Will appear after built in Shopify fields.
@@ -68,6 +107,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "shopify-checkout-field": ShopifyCheckoutField;
         "shopify-checkout-fields": ShopifyCheckoutFields;
     }
 }
@@ -76,6 +116,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "shopify-checkout-field": LocalJSX.ShopifyCheckoutField & JSXBase.HTMLAttributes<HTMLShopifyCheckoutFieldElement>;
             "shopify-checkout-fields": LocalJSX.ShopifyCheckoutFields & JSXBase.HTMLAttributes<HTMLShopifyCheckoutFieldsElement>;
         }
     }
