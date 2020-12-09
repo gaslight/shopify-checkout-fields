@@ -20,6 +20,12 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface ShopifyCheckoutFields {
+        /**
+          * The header title for the section containing these fields. Will appear after built in Shopify fields.
+         */
+        "sectionTitle": string;
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +34,15 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLShopifyCheckoutFieldsElement extends Components.ShopifyCheckoutFields, HTMLStencilElement {
+    }
+    var HTMLShopifyCheckoutFieldsElement: {
+        prototype: HTMLShopifyCheckoutFieldsElement;
+        new (): HTMLShopifyCheckoutFieldsElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "shopify-checkout-fields": HTMLShopifyCheckoutFieldsElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +60,15 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface ShopifyCheckoutFields {
+        /**
+          * The header title for the section containing these fields. Will appear after built in Shopify fields.
+         */
+        "sectionTitle"?: string;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "shopify-checkout-fields": ShopifyCheckoutFields;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +76,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "shopify-checkout-fields": LocalJSX.ShopifyCheckoutFields & JSXBase.HTMLAttributes<HTMLShopifyCheckoutFieldsElement>;
         }
     }
 }
